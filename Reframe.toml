@@ -1,0 +1,35 @@
+[reframe]
+name = "Hello Web Python"
+version = "0.1.0"
+author = "Robin"
+min_version = "0.1.8"
+
+[project]
+name = "Hello"
+version = "0.1.0"
+ignore_files = [
+    "*.pyc"
+]
+finish_text = """
+Congratulations $param.author_name$! You are done!
+Now do this:
+
+    $ cd $name_kebab_case$
+    $ chmod +x run.sh
+    $ ./run.sh
+
+"""
+
+[[param]]
+desc = { ask = "Description?", default = "This is my cool website" }
+
+[[param]]
+author_name = { ask = "Author name?" }
+
+[[param]]
+with_auth = { ask = "With authorization mechanism?", default = "true" }
+
+[[present]]
+path = "templates/login.html"
+if = "with_auth"
+

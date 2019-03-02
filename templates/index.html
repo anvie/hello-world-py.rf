@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>$name$</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+
+<body>
+    <div class="ui container">
+
+        {% if name %}
+        <h1>Welcome {{ name }} to $name$ version $version$</h1>
+        {% else %}
+        <h1>Welcome to $name$ version $version$</h1>
+        {% endif %}
+
+        <p>$param.desc$</p>
+
+        <div class="ui dividing header"></div>
+
+        <!-- <% if param.with_auth %> -->
+        {% if name %}
+        <p>You logged in as {{ name }}</p>
+        {% endif %}
+
+        {% if not name %}
+        <p>
+            Please login <a href="/login">here</a>.
+        </p>
+        {% else %}
+        <p>
+            <a href="/logout">Logout</a>
+        </p>
+        {% endif %}
+        <!-- <% endif %> -->
+
+        <div class="ui divider"></div>
+        <p>This is sample project for demo using <a href="https://github.com/Ansvia/reframe">Reframe</a>.</p>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>$name$ - Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+
+<body>
+    <div class="ui container">
+        <h1>Login</h1>
+
+        <div class="ui segment" style="width: 400px;">
+            <p>Please enter your user name and password.</p>
+            {% if error %}
+            <div class="ui negative message">{{ error }}</div>
+            {% endif %}
+            <form action="/login" method="post" class="ui form">
+                <div class="field">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="Name">
+                </div>
+                <div class="field">
+                    <label for="name">Password:</label>
+                    <input type="text" name="password" id="Password">
+                </div>
+                <div>
+                    <input type="submit" value="LOGIN" class="ui button">
+                </div>
+            </form>
+        </div>
+
+        <div class="ui divider"></div>
+        <p>This is sample project for demo using <a href="https://github.com/Ansvia/reframe">Reframe</a>.</p>
+    </div>
+</body>
+
+</html>
